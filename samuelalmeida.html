@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site de Receitas</title>
+  <script>
+    // Função para alterar a imagem do pão de queijo
+    function trocarImagem() {
+      const img = document.getElementById('imagempãodequeijo');
+      img.src = 'https://live.staticflickr.com/2474/3626094465_20f6fbea5a_b.jpg'; // Nova imagem
+      img.alt = 'pão de queijo'; // Novo texto alternativo
+    }
+
+    // Função para alterar os ingredientes
+    function alterarIngredientes() {
+      const ingredientes = document.getElementById('ingredientes');
+      ingredientes.innerHTML = '<p>Ingredientes para pão de queijo com tapioca:<br>- 2 xícaras de chá de goma de tapioca<br>- 150 gramas de queijo parmesão fresco ralado<br>- 200 gramas de requeijão cremoso (de preferência o requeijão de bisnaga)<br>';
+    }
+
+    // Função para mudar o estilo do preparo
+    function mudarEstilos() {
+      const preparo = document.getElementById('preparo');
+      preparo.style.backgroundColor = '#f0e68c'; // Cor de fundo amarela
+      preparo.style.padding = '30px'; // Aumenta o padding
+      preparo.style.borderRadius = '10px'; // Bordas arredondadas
+      preparo.style.fontWeight = 'bold'; // Altera o texto para negrito
+    }
+
+    // Função para ocultar/exibir o pão de queijo pronto
+    function togglepãodequeijopronto() {
+      const boloPronto = document.getElementById('pãodequeijopronto');
+      if (boloPronto.style.display === 'none') {
+        boloPronto.style.display = 'block'; // Exibe o pão de queijo pronto
+      } else {
+        boloPronto.style.display = 'none'; // Oculta o pão de queijo pronto
+      }
+    }
+    
+    // Definir a cor de fundo cinza permanentemente ao carregar a página
+    window.onload = function() {
+      document.body.style.backgroundColor = '#d3d3d3'; // Cor de fundo cinza
+    };
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 45%;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #preparo {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Receitas Deliciosas</h1>
+
+  <div class="container">
+    <!-- Ingredientes -->
+    <div class="box">
+      <h3>Ingredientes</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Pao_de_queijo.jpg" alt="Imagem do pão de queijo sendo preparado" id="imagempãodequeijo">
+      <p id="ingredientes">
+        - 500 g de polvilho doce<br>
+        - 250 ml de leite integral<br>
+        - 1 colher/sopa rasa de sal<br>
+        - 1 prato cheio (350 g) de queijo meia cura e/ou mussarela ralado no ralador (quanto mais queijo, mais gostoso o pão vai ficar)<br>
+        - 1 ou 2 ovos<br>
+        - 1/2 copo de óleo<br>
+        - 1 pacote de queijo ralado parmesão<br>
+      </p>
+      <button onclick="alterarIngredientes()">Alterar Ingredientes</button>
+      <button onclick="trocarImagem()">Trocar Imagem</button> 
+    </div>
+
+    <!-- Modo de Preparo -->
+    <div class="box" id="preparo">
+      <h3>Modo de Preparo</h3>
+      <p>
+        Primeiro, coloque o leite e o óleo em uma panela pra esquentar, desligue o fogo imediatamente assim que começar a ferver (você verá umas bolinhas do leite subindo).<br>
+        Em uma tigela grande, coloque o polvilho e o sal, e misture bem, logo em seguida, despeje o conteúdo da panela ainda quente, misture bem, primeiro com uma colher e depois com a mão.<br>
+        Em seguida coloque o queijo ralado e um pouco do queijo do prato e também 1 ovo, continue misturando bem.<br>
+        Coloque o resto do queijo e verifique se a massa esta com uma textura boa, nem muito oleosa e nem muito seca.<br>
+        Se você sentir que está muito seca, coloque outro ovo, se ela ficar oleosa, coloque mais um pouco de polvilho.<br>
+        Essa massa deverá soltar da tigela e também da sua mão.<br>
+        Experimente a massa e veja se esta boa de sal, algumas pessoas gostam de colocar um pouco mais de sal.<br>
+        Agora é só fazer bolinhas e colocar na assadeira, deixando um pequeno espaço entre um pão e o outro.<br>
+        Não é necessário untar a assadeira.<br>
+        Deixe no forno em temperatura média (230°) até dourar um pouco.<br>
+      </p>
+      <button onclick="mudarEstilos()">Alterar Estilos</button>
+    </div>
+
+    <!-- pão de queijo pronto -->
+    <div class="box" id="pãodequeijopronto" style="display: none;">
+      <h3>Pão de queijo pronto</h3>
+      <img src="https://live.staticflickr.com/8451/7989452704_fd2b0f19fb_b.jpg" alt="pão de queijo pronto">
+      <a href="https://www.tudogostoso.com.br/receita/69468-pao-de-queijo-facil-e-delicioso.html" target="_blank">Clique Aqui para saber mais!!</a>
+    </div>
+  </div>
+
+  <!-- Botão para Ocultar/Exibir o pão de queijo pronto -->
+  <button onclick="togglepãodequeijopronto()">Ocultar/Exibir pão de queijo pronto</button>
+</body>
+</html>
